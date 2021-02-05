@@ -34,7 +34,9 @@ const App = () => {
   const likePost = postId => {
     let data = posts.map(post => {
       if (post.id === postId) {
-        post.likes++;
+        return {
+          ...post, likes: post.likes+1
+        };
       }
       return post;
     })
